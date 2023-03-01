@@ -680,11 +680,18 @@ figure {
 }
 
 .cta {
-  max-width: 40em;
-  margin-top: 6em;
-  margin-bottom: 6em;
+  position: static;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 6em 100px;
   padding-top: 60px;
   padding-bottom: 60px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   box-shadow: 2px 2px 12px 7px #cfcfea;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
