@@ -15,7 +15,9 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
-
+.w-richtext ul li {
+  margin-bottom: 0.75em;
+}
 .w-pagination-previous {
   display: block;
   color: #333;
