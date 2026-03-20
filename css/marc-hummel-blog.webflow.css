@@ -1078,6 +1078,11 @@ figure {
 }
 
 @media screen and (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
   .body {
     padding-bottom: 100px;
   }
@@ -1098,7 +1103,7 @@ figure {
 
   .nav-index {
     margin-bottom: 0px;
-    margin-left: auto;
+    margin-left: 0;
   }
 
   .container-index-nav {
@@ -1267,6 +1272,11 @@ figure {
 }
 
 @media screen and (max-width: 479px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
   figure {
     margin-left: 10px;
   }
