@@ -561,6 +561,85 @@ svg { width: 100%; height: 100%; fill: currentColor; }
 .post__excerpt { color: var(--text-soft); font-size: 15.5px; margin-bottom: 14px; max-width: 62ch; }
 .post__meta { color: var(--text-faint); font-size: 13px; font-weight: 500; }
 
+/* ===== Case study page ===== */
+.case-kicker {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--purple); background: var(--accent-tint);
+  padding: 5px 12px; border-radius: 999px; margin: 14px 0 10px;
+}
+.case-meta { list-style: none; margin-top: 26px; display: grid; gap: 12px; max-width: 640px; }
+.case-meta li { color: var(--text-soft); font-size: 15px; line-height: 1.5; }
+.case-meta li span {
+  display: inline-block; min-width: 84px; margin-right: 10px;
+  color: var(--purple); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* App mockup in a phone frame */
+.case-hero-shot { padding-top: 10px; display: flex; justify-content: center; }
+.phone {
+  position: relative;
+  width: 340px; max-width: 100%;
+  background: #0d0d10;
+  border-radius: 42px;
+  padding: 14px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+.phone__notch {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 22px; background: #0d0d10; border-radius: 0 0 14px 14px; z-index: 2;
+}
+.app {
+  background: #fff; color: #16131f;
+  border-radius: 30px; padding: 30px 22px 26px;
+  font-size: 15px;
+}
+.app__top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
+.app__title { font-size: 22px; font-weight: 800; color: #111; letter-spacing: -.02em; }
+.app__sub { color: #8b8b93; font-size: 14px; margin-top: 2px; }
+.app__ask { color: #4b5563; text-decoration: underline; font-size: 14px; white-space: nowrap; }
+.app__label { color: #a3a3ad; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin: 18px 0 8px; }
+.app__row {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  border: 1px solid #ececf0; border-radius: 12px; padding: 15px 16px; margin-bottom: 8px;
+}
+.app__name { color: #1a1a1f; font-weight: 500; }
+.app__stat { color: #8b8b93; font-size: 14px; white-space: nowrap; }
+.app__flag { color: #e0791b; font-style: normal; }
+
+/* Prose */
+.case { max-width: 720px; }
+.case h2 { font-size: clamp(22px, 3vw, 28px); margin: 40px 0 14px; }
+.case h2:first-child { margin-top: 0; }
+.case p { color: var(--text-soft); font-size: 16.5px; line-height: 1.7; margin-bottom: 16px; }
+.case strong { color: var(--text); font-weight: 600; }
+.case code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: .88em; background: var(--surface-2); border: 1px solid var(--border);
+  padding: 1px 6px; border-radius: 6px; color: var(--purple);
+}
+.case-list { list-style: none; display: grid; gap: 14px; margin: 4px 0 16px; }
+.case-list li {
+  color: var(--text-soft); font-size: 16px; line-height: 1.65;
+  padding-left: 22px; position: relative;
+}
+.case-list li::before {
+  content: ""; position: absolute; left: 0; top: 10px;
+  width: 8px; height: 8px; border-radius: 2px;
+  background: linear-gradient(135deg, var(--purple), var(--purple-soft));
+}
+.case-table-wrap { overflow-x: auto; margin: 6px 0 18px; }
+.case-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.case-table th, .case-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.case-table th { color: var(--purple); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.case-table td { color: var(--text-soft); }
+.case-cta {
+  margin-top: 44px; padding: 30px; text-align: center;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow);
+}
+.case-cta p { color: var(--text); font-size: 17px; margin-bottom: 18px; }
+
 /* ===== Reveal on scroll ===== */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Supply Predictor — Case Study | Marc Hummel</title>
+  <meta name="description" content="Case study: a private AI-native PWA that predicts what's about to run out around the house — from low-effort, natural-language logging." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Left icon sidebar ===== -->
+  <aside class="sidebar" aria-label="Navigation">
+    <a href="index.html" class="sidebar__logo" aria-label="Home">MH</a>
+    <nav class="sidebar__nav">
+      <a href="index.html" class="sidebar__link" data-tip="Home" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3L12 3Z"/></svg>
+      </a>
+      <a href="index.html#projects" class="sidebar__link is-active" data-tip="Projects" aria-label="Projects">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Zm2 3v11h14V8H5Z"/></svg>
+      </a>
+      <a href="about.html" class="sidebar__link" data-tip="About" aria-label="About">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6Z"/></svg>
+      </a>
+      <a href="index.html#contact" class="sidebar__link" data-tip="Contact" aria-label="Contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 3.2V18h16V7.2l-8 5-8-5Z"/></svg>
+      </a>
+    </nav>
+    <button class="sidebar__theme" id="themeToggle" aria-label="Toggle color theme" data-tip="Theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.4a5 5 0 0 1-7.5-6.5C12.9 3 12.5 3 12 3Z"/></svg>
+    </button>
+  </aside>
+
+  <main id="top" class="main">
+    <section class="section blog-head">
+      <a class="back-link" href="index.html#projects">&larr; Back to projects</a>
+      <p class="case-kicker">Case study</p>
+      <h1 class="blog-title">Home Supply Predictor</h1>
+      <p class="blog-sub">A private PWA that tells you what&rsquo;s about to run out around the house &mdash; before it does &mdash; from low-effort, natural-language logging. No forms. No stock counts. You just talk to it.</p>
+      <ul class="case-meta">
+        <li><span>Live</span> Password-protected PWA, installable, used daily</li>
+        <li><span>Built with</span> Next.js 16 · Supabase · Anthropic API (Claude) · Vercel</li>
+        <li><span>Role</span> Solo — product, architecture &amp; build, with an AI coding agent</li>
+      </ul>
+    </section>
+
+    <section class="section case-hero-shot">
+      <div class="phone">
+        <div class="phone__notch" aria-hidden="true"></div>
+        <div class="app" aria-label="Screenshot of the Home Supply Predictor app">
+          <div class="app__top">
+            <div>
+              <h3 class="app__title">Your supplies</h3>
+              <p class="app__sub">1 to keep an eye on</p>
+            </div>
+            <a class="app__ask" href="#" onclick="return false">Ask a question</a>
+          </div>
+          <p class="app__label">Keep an eye on</p>
+          <div class="app__row">
+            <span class="app__name">toilet wipes</span>
+            <span class="app__stat">0 count <em class="app__flag">you marked low</em></span>
+          </div>
+          <p class="app__label">Tracking</p>
+          <div class="app__row"><span class="app__name">almond milk</span><span class="app__stat">1 count&nbsp;&nbsp;~4 days</span></div>
+          <div class="app__row"><span class="app__name">chia seeds</span><span class="app__stat">1 count&nbsp;&nbsp;~this week</span></div>
+          <div class="app__row"><span class="app__name">gluten free oatmeal</span><span class="app__stat">907 g&nbsp;&nbsp;~this week</span></div>
+          <div class="app__row"><span class="app__name">paper towel</span><span class="app__stat">4 count&nbsp;&nbsp;~9 days</span></div>
+          <div class="app__row"><span class="app__name">a&amp;d cream</span><span class="app__stat">1 count&nbsp;&nbsp;~next week</span></div>
+          <div class="app__row"><span class="app__name">milk</span><span class="app__stat">2.5 gal&nbsp;&nbsp;~11 days</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case">
+      <h2>The problem</h2>
+      <p>Every &ldquo;home inventory&rdquo; app dies the same way: they make you do data entry. Barcode scans, quantity fields, stock counts &mdash; chores nobody keeps up. So the data goes stale and the app becomes useless.</p>
+      <p>The insight that reframes it: <strong>you don&rsquo;t need to know how much you have &mdash; you need to know when you&rsquo;ll run out.</strong> That&rsquo;s a prediction problem, not a bookkeeping one.</p>
+
+      <h2>The core design decision</h2>
+      <p><strong>It&rsquo;s a ledger with math on top, not an inventory app.</strong> You never count stock. You log <em>events</em> in plain language &mdash; &ldquo;bought coffee,&rdquo; &ldquo;ran out of TP,&rdquo; &ldquo;used half a gallon of milk&rdquo; &mdash; and the app infers consumption rates and predicts run-out dates.</p>
+      <p>This one decision drives everything: the entire UI is a <strong>single natural-language text box</strong>. No forms, no dropdowns, no edit screens. An LLM parses what you type into structured events; a confirmation chip shows what it understood, with one-tap undo.</p>
+
+      <h2>The clever part: a signal hierarchy that degrades gracefully</h2>
+      <p>The app never <em>requires</em> effort. It works off whatever signal you give it, and gets sharper as you give more &mdash; automatically picking the best available signal per item:</p>
+      <div class="case-table-wrap">
+        <table class="case-table">
+          <thead><tr><th>Effort</th><th>Signal</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Lowest</td><td><strong>Purchase cadence</strong></td><td>Guesses from the gaps between buys. Useful on day one.</td></tr>
+            <tr><td>Low</td><td><strong>Depletion markers</strong></td><td>&ldquo;ran out&rdquo; / &ldquo;almost out&rdquo; &mdash; ground-truth pack lifespan, far cleaner than guessing.</td></tr>
+            <tr><td>Optional</td><td><strong>Quantity balance</strong></td><td>Log amounts and it tracks on-hand and predicts <code>balance ÷ your usage rate</code>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Crucially, quantity tracking is an <strong>optional overlay, per item</strong> &mdash; lazy items still work, precise items get precise. This solved the classic &ldquo;backup blind spot&rdquo;: because a prediction divides <em>total</em> stock by your consumption rate, having spares automatically pushes the run-out date out &mdash; no false &ldquo;you&rsquo;re low!&rdquo; nag while three packs sit in the closet.</p>
+
+      <h2>AI-native architecture (not AI-bolted-on)</h2>
+      <p>The interesting engineering is in <em>how</em> the LLM is used &mdash; sparingly and structurally, not as a magic black box:</p>
+      <ul class="case-list">
+        <li><strong>Natural language is the whole interface.</strong> Typed entries &rarr; Claude parses to structured JSON commands (log / update / delete / correct) using <strong>structured outputs</strong> for reliability, with on-the-fly item creation and context so it resolves shorthand like &ldquo;TP&rdquo; and &ldquo;that.&rdquo;</li>
+        <li><strong>Chat that queries the database, not the context window.</strong> The &ldquo;ask about my supplies&rdquo; feature uses <strong>tool use</strong> &mdash; Claude calls parameterized lookup tools that filter in Postgres &mdash; instead of stuffing the whole history into the prompt. It scales to any amount of data and costs pennies per question regardless of history size.</li>
+        <li><strong>Conversational corrections.</strong> The same chat can <em>fix</em> data: &ldquo;a&amp;d cream should be 2,&rdquo; &ldquo;that milk was actually almond milk,&rdquo; &ldquo;delete the coffee purchase from July 5th.&rdquo; Non-destructive count fixes apply instantly as <strong>append-only, auditable adjustment events</strong>; anything destructive is gated behind a preview-and-confirm handshake.</li>
+        <li><strong>Right-sized models.</strong> Parsing started on the cheapest model and was upgraded only once the task grew real judgment (disambiguating &ldquo;toilet paper&rdquo; vs &ldquo;paper towel,&rdquo; resolving weight-vs-fluid ounces by context). The prediction math itself uses <strong>no LLM at all</strong> &mdash; it&rsquo;s pure, unit-tested TypeScript. AI where judgment is needed; deterministic code where it isn&rsquo;t.</li>
+      </ul>
+
+      <h2>Engineering notes</h2>
+      <ul class="case-list">
+        <li><strong>Prediction engine:</strong> a pure, dependency-free TypeScript module (recency-weighted rates, outlier down-weighting for bulk buys/vacations, guardrails against predicting on thin data) with a full unit-test suite &mdash; decoupled from the DB and UI so the math is provable in isolation.</li>
+        <li><strong>Security:</strong> Postgres <strong>Row-Level Security</strong> is the real trust boundary (every row scoped to its owner); the browser only ever holds a publishable key, and the LLM API key never leaves the server.</li>
+        <li><strong>Data model:</strong> an append-only event log; on-hand balance is <em>derived</em> (<code>SUM</code> of signed quantities), never manually entered &mdash; which keeps corrections auditable and reversible.</li>
+        <li><strong>Ships continuously:</strong> push to <code>main</code> &rarr; Vercel auto-deploys; schema changes as versioned SQL migrations.</li>
+      </ul>
+
+      <h2>How it was built</h2>
+      <p>The whole thing was designed and built through <strong>conversational iteration with an AI coding agent (Claude Code)</strong> &mdash; starting from a written product spec and evolving through real daily use. That process is itself the interesting part:</p>
+      <ul class="case-list">
+        <li><strong>Real usage drove the design.</strong> Nearly every good decision came from dogfooding, not planning: a &ldquo;toilet paper logged as paper towel&rdquo; bug exposed over-eager fuzzy matching; a false &ldquo;low stock&rdquo; alert traced to a duplicate write from a network retry; mixed &ldquo;oz&rdquo; and &ldquo;g&rdquo; entries on coffee forced a proper units model. Each was diagnosed and fixed in the loop.</li>
+        <li><strong>Product judgment stayed human.</strong> The decisions that mattered &mdash; query-the-DB instead of context-stuffing, treat &ldquo;used&rdquo; as implying &ldquo;open,&rdquo; make counting an optional overlay rather than a requirement, confirm-only-on-destructive corrections &mdash; were product calls made through the work, with the agent as an extremely fast implementer and thinking partner.</li>
+      </ul>
+      <p>It&rsquo;s a working demonstration of building a real, shipped product <em>with</em> AI as the development environment &mdash; and of using AI deliberately <em>inside</em> the product, only where it earns its place.</p>
+
+      <h2>What&rsquo;s next</h2>
+      <p>Retailer integration for one-tap re-ordering &mdash; the count model was built specifically to make that safe (you don&rsquo;t auto-buy when you have spares), which is why quantity tracking exists at all.</p>
+
+      <div class="case-cta">
+        <p>It&rsquo;s a private app, but I&rsquo;m happy to give a live walkthrough.</p>
+        <a class="btn btn--primary" href="mailto:hey@marchummel.com?subject=Home%20Supply%20Predictor%20walkthrough">Request a walkthrough</a>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> Marc Hummel &middot; <a href="index.html">Portfolio</a> &middot; <a href="https://www.linkedin.com/in/marchummel/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
