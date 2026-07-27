@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Marc Hummel</title>
+  <meta name="description" content="More about Marc Hummel — marketer, cyclist, tinkerer — and where to find him around the web." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Left icon sidebar ===== -->
+  <aside class="sidebar" aria-label="Navigation">
+    <a href="index.html" class="sidebar__logo" aria-label="Home">MH</a>
+    <nav class="sidebar__nav">
+      <a href="index.html" class="sidebar__link" data-tip="Home" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3L12 3Z"/></svg>
+      </a>
+      <a href="about.html" class="sidebar__link is-active" data-tip="About" aria-label="About">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6Z"/></svg>
+      </a>
+      <a href="https://blog.marchummel.com/" target="_blank" rel="noopener" class="sidebar__link" data-tip="Blog" aria-label="Blog">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 5v2h10V8H7Zm0 4v2h10v-2H7Zm0 4v2h6v-2H7Z"/></svg>
+      </a>
+      <a href="index.html#contact" class="sidebar__link" data-tip="Contact" aria-label="Contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 3.2V18h16V7.2l-8 5-8-5Z"/></svg>
+      </a>
+    </nav>
+    <button class="sidebar__theme" id="themeToggle" aria-label="Toggle color theme" data-tip="Theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.4a5 5 0 0 1-7.5-6.5C12.9 3 12.5 3 12 3Z"/></svg>
+    </button>
+  </aside>
+
+  <main id="top" class="main">
+    <section class="section blog-head">
+      <a class="back-link" href="index.html">&larr; Back to portfolio</a>
+      <h1 class="blog-title">About Me</h1>
+      <p class="blog-sub">The longer version &mdash; and where to find me around the web.</p>
+    </section>
+
+    <!-- ===== Bio ===== -->
+    <section class="section about-bio-section">
+      <div class="about-bio">
+        <div class="about-portrait">
+          <div class="about-portrait__ring" aria-hidden="true"></div>
+          <img src="portrait.jpg" alt="Marc Hummel" onerror="this.style.display='none'" />
+        </div>
+        <div class="about-bio__text">
+          <p>I&rsquo;m a marketer, cyclist, and serial tinkerer. I live in Jersey City Heights with a growing collection of handmade furniture and a coffee setup that&rsquo;s fussier than it needs to be. Originally from Pittsburgh.</p>
+          <p>When I&rsquo;m not building something, I&rsquo;m biking the Empire State Trail, writing with stationery, drawing stationary objects, and reading non-fiction books.</p>
+          <p>An extremely nerdy joke I told <a href="https://bsky.app/profile/marchummel.com/post/3mps322mt2s2c" target="_blank" rel="noopener">on Bluesky</a> once made Ben Thompson laugh out loud on an episode of Dithering.</p>
+          <p>I used to have my own clothing company. It was called <a href="https://bubjafrig49534.github.io/index/bminus/bm/" target="_blank" rel="noopener">bminus</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Around the web ===== -->
+    <section class="section">
+      <h2 class="section__title">Around the Web</h2>
+      <div class="links-grid">
+        <a class="link-tile" href="https://github.com/bubjafrig49534" target="_blank" rel="noopener">
+          <span class="link-tile__name">GitHub</span>
+          <span class="link-tile__handle">@bubjafrig49534</span>
+        </a>
+        <a class="link-tile" href="https://bsky.app/profile/marchummel.com" target="_blank" rel="noopener">
+          <span class="link-tile__name">Bluesky</span>
+          <span class="link-tile__handle">@marchummel.com</span>
+        </a>
+        <a class="link-tile" href="https://www.producthunt.com/@longlivethe" target="_blank" rel="noopener">
+          <span class="link-tile__name">Product Hunt</span>
+          <span class="link-tile__handle">@longlivethe</span>
+        </a>
+        <a class="link-tile" href="https://letterboxd.com/markwithac" target="_blank" rel="noopener">
+          <span class="link-tile__name">Letterboxd</span>
+          <span class="link-tile__handle">@markwithac</span>
+        </a>
+        <a class="link-tile" href="https://music.apple.com/profile/marchummel" target="_blank" rel="noopener">
+          <span class="link-tile__name">Apple Music</span>
+          <span class="link-tile__handle">@marchummel</span>
+        </a>
+        <a class="link-tile" href="https://www.linkedin.com/in/marchummel/" target="_blank" rel="noopener">
+          <span class="link-tile__name">LinkedIn</span>
+          <span class="link-tile__handle">in/marchummel</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Kind words ===== -->
+    <section class="section">
+      <h2 class="section__title">Kind Words</h2>
+      <div class="quotes">
+        <blockquote class="quote">
+          <p>&ldquo;If someone were stalking me, I&rsquo;d want it to be someone like [Marc]!&rdquo;</p>
+          <cite>Peter Wagener &middot; CTO<span class="quote__src">Received via email, out of context &middot; 2026</span></cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>&ldquo;Marc&rsquo;s tinkerer mindset was demonstrated through the curiosity and seeking for solutions in every approach to the PayFac business. He got an early start to scoping a persistent marketing identifier and helping us identify the type of professional assistance we will need for acquisition.&rdquo;</p>
+          <cite>Janet Frasier &middot; Marketing VP<span class="quote__src">Performance review excerpt &middot; 2022</span></cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>&ldquo;Marc demonstrates creativity balanced with practicality &mdash; moving projects forward effectively while excelling at explaining complex concepts to stakeholders.&rdquo;</p>
+          <cite>Neha Patel &middot; VP of Finance<span class="quote__src">LinkedIn &middot; 2025</span></cite>
+        </blockquote>
+      </div>
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> Marc Hummel &middot; <a href="index.html">Portfolio</a> &middot; <a href="https://blog.marchummel.com/" target="_blank" rel="noopener">Blog</a> &middot; <a href="https://www.linkedin.com/in/marchummel/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

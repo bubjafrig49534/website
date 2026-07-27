@@ -1,77 +1,285 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Sat Mar 04 2023 02:32:44 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="60030a4d53f40e77da1db33b" data-wf-site="60030a4d53f40eb7a91db33a">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Marc Hummel&#x27;s home on the interwebs | Since 2002 | Brooklyn NY</title>
-  <meta content="Marc Hummel is a writer, marketer, etc. who live in Brooklyn New York. This is where he puts stuff on the internet." name="description">
-  <meta content="Marc Hummel&#x27;s home on the interwebs  |  Since 2002  |  Brooklyn NY" property="og:title">
-  <meta content="Marc Hummel is a writer, marketer, etc. who live in Brooklyn New York. This is where he puts stuff on the internet." property="og:description">
-  <meta content="https://uploads-ssl.webflow.com/60030a4d53f40eb7a91db33a/601ec6e9fe0b487a027bd11f_hummel-open-graph.png" property="og:image">
-  <meta content="Marc Hummel&#x27;s home on the interwebs  |  Since 2002  |  Brooklyn NY" property="twitter:title">
-  <meta content="Marc Hummel is a writer, marketer, etc. who live in Brooklyn New York. This is where he puts stuff on the internet." property="twitter:description">
-  <meta content="https://uploads-ssl.webflow.com/60030a4d53f40eb7a91db33a/601ec6e9fe0b487a027bd11f_hummel-open-graph.png" property="twitter:image">
-  <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Webflow" name="generator">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/marc-hummel-blog.webflow.css" rel="stylesheet" type="text/css">
-  <script src="https://use.typekit.net/yin8sob.js" type="text/javascript"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
-  <script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
-<a rel="me" href="https://sfba.social/@marchummel" style="display:none;">Mastodon</a></head>
-<body class="body">
-  <div class="top-nav-heading-aku wf-section">
-    <div class="top-header-container w-container">
-      <a href="#" class="header-link w-inline-block">
-        <h1 class="heading-3">hello</h1>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marc Hummel | GTM Engineer & Marketer</title>
+  <meta name="description" content="Marc Hummel — B2B marketer and GTM engineer who builds the Salesforce, automation, and AI systems behind growth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Left icon sidebar ===== -->
+  <aside class="sidebar" aria-label="Section navigation">
+    <a href="#top" class="sidebar__logo" aria-label="Home">MH</a>
+    <nav class="sidebar__nav">
+      <a href="#about" class="sidebar__link is-active" data-tip="About" aria-label="About">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6Z"/></svg>
       </a>
-    </div>
-  </div>
-  <div class="nav-index wf-section">
-    <div class="container-index-nav w-container">
-      <a href="https://portfolio.marchummel.com" class="index-nav-link w-inline-block">
-        <h1 class="index-nav-heading">Portfolio</h1>
+      <a href="#expertise" class="sidebar__link" data-tip="Expertise" aria-label="Expertise">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.4 5.6L20 9l-4.2 3.7L17 19l-5-3-5 3 1.2-6.3L4 9l5.6-1.4L12 2Z"/></svg>
       </a>
-    </div>
-   
-	  <div class="container-index-nav w-container">
-      <a href="https://drive.google.com/file/d/1NXa9k4TjzPOJJkewoT-rozhQ0jl8h-89/view" class="index-nav-link w-inline-block">
-        <h1 class="index-nav-heading">Resume</h1>
+      <a href="#experience" class="sidebar__link" data-tip="Experience" aria-label="Experience">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3V6a2 2 0 0 1 2-2Zm0 3h6V6H9v1Z"/></svg>
       </a>
-    </div>
-	   <div class="container-index-nav w-container">
-      <a href="bio.html" class="index-nav-link w-inline-block">
-        <h1 class="index-nav-heading">Bio</h1>
+      <a href="#projects" class="sidebar__link" data-tip="Projects" aria-label="Projects">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Zm2 3v11h14V8H5Z"/></svg>
       </a>
-    </div>
-	  <div class="container-index-nav w-container">
-      <a href="http://blog.marchummel.com/" class="index-nav-link w-inline-block">
-        <h1 class="index-nav-heading">Blog</h1>
+      <a href="#toolkit" class="sidebar__link" data-tip="Toolkit" aria-label="Toolkit">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Zm-8 8v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5l-8 4-8-4Z"/></svg>
       </a>
-    </div>
-    <div class="container-index-nav w-container">
-      <a href="contact.html" class="index-nav-link w-inline-block">
-        <h1 class="index-nav-heading">Contact</h1>
+      <a href="https://blog.marchummel.com/" target="_blank" rel="noopener" class="sidebar__link" data-tip="Blog" aria-label="Blog">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 5v2h10V8H7Zm0 4v2h10v-2H7Zm0 4v2h6v-2H7Z"/></svg>
       </a>
-    </div>
-	 
-  </div>
-  <div class="foot-nav-heading-aku-copy wf-section">
-    <div class="footer-bottom-again w-container">
-      <a href="index.html" aria-current="page" class="footer-link w-inline-block w--current">
-        <h1 class="heading-3">© Marc Hummel </h1>
+      <a href="#contact" class="sidebar__link" data-tip="Contact" aria-label="Contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 3.2V18h16V7.2l-8 5-8-5Z"/></svg>
       </a>
-    </div>
-  </div>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60030a4d53f40eb7a91db33a" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
-  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+    </nav>
+    <button class="sidebar__theme" id="themeToggle" aria-label="Toggle color theme" data-tip="Theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.4a5 5 0 0 1-7.5-6.5C12.9 3 12.5 3 12 3Z"/></svg>
+    </button>
+  </aside>
+
+  <main id="top" class="main">
+    <!-- ===== Hero ===== -->
+    <section id="about" class="hero section">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Hello, my name is</p>
+        <h1 class="hero__title">
+          <span class="grad-teal">Marc Hummel</span> and<br />
+          I&rsquo;m a <span class="grad-purple rotator" id="rotator">Marketer</span>
+        </h1>
+        <p class="hero__lede">
+          I&rsquo;m a B2B marketer who builds the systems behind growth. Over 14 years I went from
+          campaigns and content to architecting the Salesforce, automation, and AI workflows that
+          scale revenue. Based in Jersey City Heights.
+          <a class="hero__more" href="about.html">More about me &rarr;</a>
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="mailto:hey@marchummel.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 3.2V18h16V7.2l-8 5-8-5Z"/></svg>
+            Email Me
+          </a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/marchummel/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 5.9V21h-4v-5.4c0-1.3 0-3-1.8-3s-2 1.4-2 2.9V21H9V9Z"/></svg>
+            Connect
+          </a>
+          <a class="btn btn--ghost" href="https://drive.google.com/file/d/1NXa9k4TjzPOJJkewoT-rozhQ0jl8h-89/view" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 2 4 4h-4V4ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>
+            Résumé
+          </a>
+        </div>
+      </div>
+      <div class="hero__photo">
+        <div class="hero__blob" aria-hidden="true"></div>
+        <img src="portrait.jpg" alt="Portrait of Marc Hummel" onerror="this.style.display='none'" />
+        <span class="hero__photo-fallback" aria-hidden="true">MH</span>
+      </div>
+    </section>
+
+    <!-- ===== Expertise ===== -->
+    <section id="expertise" class="section">
+      <h2 class="section__title">What I Do</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24"><path d="M4 5h16v10H4V5Zm2 12h12v2H6v-2Zm3-9v6h2V8H9Zm4 2v4h2v-4h-2Z"/></svg>
+          </div>
+          <h3>GTM Engineering &amp; Salesforce</h3>
+          <p>Architecting CRM data models, platform migrations, and API integrations that turn a sales tool into revenue infrastructure.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm6 6a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM6 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm6 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg>
+          </div>
+          <h3>Marketing Automation</h3>
+          <p>Pardot / Marketing Cloud implementation, lead scoring, and lifecycle programs that scale utilization without adding headcount.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24"><path d="m12 2 2.4 5.6L20 9l-4.2 3.7L17 19l-5-3-5 3 1.2-6.3L4 9l5.6-1.4L12 2Z"/></svg>
+          </div>
+          <h3>AI-Powered Growth</h3>
+          <p>Shipping production AI with the Claude API and Claude Code &mdash; from real-time lead qualification to internal tools I build myself.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Work Experience ===== -->
+    <section id="experience" class="section">
+      <h2 class="section__title">Work Experience</h2>
+      <div class="timeline">
+        <article class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3>Director of Marketing</h3>
+            <p class="tl-meta"><span class="tl-company">CardFlight</span> · 2018 – 2025</p>
+            <p>Built a B2B fintech&rsquo;s entire GTM stack from scratch: migrated Salesforce from Classic to Lightning, designed custom data models, and integrated the Infinicept payments API. Stood up Pardot end-to-end and scaled from ~10 to 40+ Salesforce users (4× utilization). Grew a direct-to-merchant acquisition channel from 0 to 595 merchants across 50+ growth experiments, and built a Claude-API system to qualify leads and flag fraud before they hit the sales queue.</p>
+          </div>
+        </article>
+        <article class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3>Marketing Manager</h3>
+            <p class="tl-meta"><span class="tl-company">YouVisit</span> · 2017 – 2018</p>
+            <p>Owned marketing automation and demand gen for a virtual-tour platform. Took over and rebuilt the Pardot instance, and produced client case studies &mdash; including a visual, brochure-style piece on how Pilot Flying J used the product to support recruiting.</p>
+          </div>
+        </article>
+        <article class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3>Content Marketing Manager</h3>
+            <p class="tl-meta"><span class="tl-company">Monetate</span> · 2015 – 2017</p>
+            <p>Ran content and demand-generation programs for a personalization / ecommerce platform &mdash; ebooks, thought leadership, and seasonal campaigns (Kentucky Derby, Pi Day) that drove pipeline and engagement.</p>
+          </div>
+        </article>
+        <article class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3>Copywriter</h3>
+            <p class="tl-meta"><span class="tl-company">QVC</span> · 2011 – 2015</p>
+            <p>Wrote online content across web, on-air text, and email newsletters for a top-10 North American ecommerce property &mdash; building omnichannel content skills across electronics, home, beauty, and fashion.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects" class="section">
+      <h2 class="section__title">Selected Work</h2>
+
+      <div class="proj-group">
+        <h3 class="proj-group__title">Built with AI &amp; Code</h3>
+        <div class="cards cards--projects">
+          <a class="proj" href="mailto:hey@marchummel.com?subject=Home%20Supply%20Predictor%20walkthrough" rel="noopener">
+            <div class="proj__thumb" data-label="PWA"></div>
+            <h3>Home Supply Predictor</h3>
+            <p>A private, installable PWA that predicts what&rsquo;s about to run out around the house &mdash; from plain-language logging, with no forms or stock counts. Next.js + Supabase + Claude: the LLM is the entire interface, while unit-tested TypeScript does the prediction math.</p>
+            <span class="proj__cta">Request a walkthrough &rarr;</span>
+          </a>
+          <a class="proj" href="https://www.loom.com/share/16f6e1ac1d4f4f7a9f8901bd42eb870e" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="n8n"></div>
+            <h3>AI Cold-Email Workflow</h3>
+            <p>An n8n flow that scrapes a company&rsquo;s homepage, has Claude draft a tailored cold email, and drops it straight into the rep&rsquo;s Gmail drafts.</p>
+            <span class="proj__cta">Watch on Loom &rarr;</span>
+          </a>
+          <a class="proj" href="https://hummel.vercel.app/" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="WEB"></div>
+            <h3>Hummelify</h3>
+            <p>Built with Claude Code: upload a selfie and it reimagines your face as a Hummel figurine, then emails it to you &mdash; a proof-of-concept for beautiful, AI-native forms.</p>
+            <span class="proj__cta">Launch Hummelify &rarr;</span>
+          </a>
+          <a class="proj" href="https://bubjafrig49534.github.io/landing/index.html" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="TOOL"></div>
+            <h3>Email List Cleanser</h3>
+            <p>A browser-based tool that validates contacts before a Marketing Cloud (MCAE) import &mdash; catching bad emails, field-length violations, and dupes. Data never leaves your machine.</p>
+            <span class="proj__cta">View project &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-group">
+        <h3 class="proj-group__title">Content Marketing</h3>
+        <div class="cards cards--projects">
+          <a class="proj" href="https://cardflight.com/small-business-impact" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="REPORT"></div>
+            <h3>Small Business Report</h3>
+            <p>A long-running report analyzing CardFlight&rsquo;s 125,000+ merchant portfolio. I found the hook in the data, shaped each narrative with BizOps, and wrote every edition &mdash; launched for awareness at the start of COVID-19.</p>
+            <span class="proj__cta">View project &rarr;</span>
+          </a>
+          <a class="proj" href="https://drive.google.com/file/d/14WHWVG6cp-FycealpVaIpyb-4z5PpyCw/view" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="CASE"></div>
+            <h3>Pilot Flying J Case Study</h3>
+            <p>How a national truck-stop chain used VR to attract and train talent. Writing, content strategy, interviewing, and design direction, at YouVisit.</p>
+            <span class="proj__cta">Download PDF &rarr;</span>
+          </a>
+          <a class="proj" href="https://drive.google.com/file/d/16VETLp9Ov_ozr0o2NqKUQnDi_s1JuzzB/view" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="EBOOK"></div>
+            <h3>Thrive TRM Ebook</h3>
+            <p>A bottom-funnel ebook educating executive-recruiting pros on the problems Thrive TRM solves. Industry research, narrative, and writing (freelance).</p>
+            <span class="proj__cta">Download PDF &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-group">
+        <h3 class="proj-group__title">Curiosities</h3>
+        <div class="cards cards--projects">
+          <a class="proj" href="https://portfolio.marchummel.com/ios-shortcuts.html" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="iOS"></div>
+            <h3>iOS Shortcuts</h3>
+            <p>Shortcuts I built to run across my iPhone, Watch, and HomePod &mdash; small proofs of a curiosity-and-tinkering habit.</p>
+            <span class="proj__cta">View shortcuts &rarr;</span>
+          </a>
+          <a class="proj" href="https://bubjafrig49534.github.io/index/wing-again/index.html" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="THESIS"></div>
+            <h3>Do Ideas Spread Like Viruses?</h3>
+            <p>My UPenn Master&rsquo;s capstone: interviews plus an interactive website exploring how ideas propagate. A little broken now, but worth a look.</p>
+            <span class="proj__cta">View project &rarr;</span>
+          </a>
+          <a class="proj" href="https://bubjafrig49534.github.io/index/bminus/bm/" target="_blank" rel="noopener">
+            <div class="proj__thumb" data-label="2004"></div>
+            <h3>bminus</h3>
+            <p>A bike-apparel company a friend and I founded in 2004 around one idea: &ldquo;bicycles are for lovers.&rdquo; Hundreds of hand-packed tees later, we mailed the last parcel in 2011.</p>
+            <span class="proj__cta">View project &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Toolkit ===== -->
+    <section id="toolkit" class="section">
+      <h2 class="section__title">Toolkit</h2>
+      <div class="skills">
+        <div class="skills__group">
+          <h3>CRM &amp; Automation</h3>
+          <ul class="chips">
+            <li>Salesforce (architecture &amp; admin)</li>
+            <li>Pardot / Marketing Cloud</li>
+            <li>Lead scoring &amp; lifecycle</li>
+            <li>REST API integrations</li>
+            <li>Infinicept</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3>AI &amp; Building</h3>
+          <ul class="chips">
+            <li>Claude API</li>
+            <li>Claude Code</li>
+            <li>Prompt engineering</li>
+            <li>Full-stack prototyping</li>
+            <li>Webflow</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3>Growth &amp; Content</h3>
+          <ul class="chips">
+            <li>Growth experimentation / A&#47;B</li>
+            <li>Landing pages &amp; funnels</li>
+            <li>LinkedIn paid social</li>
+            <li>Copywriting</li>
+            <li>Graphic design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section section--contact">
+      <h2 class="section__title">Let&rsquo;s build something</h2>
+      <p class="contact__lede">Looking for someone who can own the systems behind growth &mdash; or just want to talk shop about AI, Salesforce, or bikes? My inbox is open.</p>
+      <div class="contact__actions">
+        <a class="btn btn--primary btn--lg" href="mailto:hey@marchummel.com">Get in touch</a>
+        <a class="btn btn--ghost btn--lg" href="https://drive.google.com/file/d/1NXa9k4TjzPOJJkewoT-rozhQ0jl8h-89/view" target="_blank" rel="noopener">View résumé</a>
+      </div>
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> Marc Hummel · <a href="https://blog.marchummel.com/" target="_blank" rel="noopener">Blog</a> · <a href="https://www.linkedin.com/in/marchummel/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
