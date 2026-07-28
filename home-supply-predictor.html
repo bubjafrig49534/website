@@ -82,21 +82,7 @@
       <p><strong>It&rsquo;s a ledger with math on top, not an inventory app.</strong> You never count stock. You log <em>events</em> in plain language &mdash; &ldquo;bought coffee,&rdquo; &ldquo;ran out of TP,&rdquo; &ldquo;used half a gallon of milk&rdquo; &mdash; and the app infers consumption rates and predicts run-out dates.</p>
       <p>This one decision drives everything: the entire UI is a <strong>single natural-language text box</strong>. No forms, no dropdowns, no edit screens. An LLM parses what you type into structured events; a confirmation chip shows what it understood, with one-tap undo.</p>
 
-      <h2>The clever part: a signal hierarchy that degrades gracefully</h2>
-      <p>The app never <em>requires</em> effort. It works off whatever signal you give it, and gets sharper as you give more &mdash; automatically picking the best available signal per item:</p>
-      <div class="case-table-wrap">
-        <table class="case-table">
-          <thead><tr><th>Effort</th><th>Signal</th><th>What it does</th></tr></thead>
-          <tbody>
-            <tr><td>Lowest</td><td><strong>Purchase cadence</strong></td><td>Guesses from the gaps between buys. Useful on day one.</td></tr>
-            <tr><td>Low</td><td><strong>Depletion markers</strong></td><td>&ldquo;ran out&rdquo; / &ldquo;almost out&rdquo; &mdash; ground-truth pack lifespan, far cleaner than guessing.</td></tr>
-            <tr><td>Optional</td><td><strong>Quantity balance</strong></td><td>Log amounts and it tracks on-hand and predicts <code>balance ÷ your usage rate</code>.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>Crucially, quantity tracking is an <strong>optional overlay, per item</strong> &mdash; lazy items still work, precise items get precise. This solved the classic &ldquo;backup blind spot&rdquo;: because a prediction divides <em>total</em> stock by your consumption rate, having spares automatically pushes the run-out date out &mdash; no false &ldquo;you&rsquo;re low!&rdquo; nag while three packs sit in the closet.</p>
-
-      <h2>AI-native architecture (not AI-bolted-on)</h2>
+      <h2>AI-native architecture</h2>
       <p>The interesting engineering is in <em>how</em> the LLM is used &mdash; sparingly and structurally, not as a magic black box:</p>
       <ul class="case-list">
         <li><strong>Natural language is the whole interface.</strong> Typed entries &rarr; Claude parses to structured JSON commands (log / update / delete / correct) using <strong>structured outputs</strong> for reliability, with on-the-fly item creation and context so it resolves shorthand like &ldquo;TP&rdquo; and &ldquo;that.&rdquo;</li>
@@ -112,14 +98,6 @@
         <li><strong>Data model:</strong> an append-only event log; on-hand balance is <em>derived</em> (<code>SUM</code> of signed quantities), never manually entered &mdash; which keeps corrections auditable and reversible.</li>
         <li><strong>Ships continuously:</strong> push to <code>main</code> &rarr; Vercel auto-deploys; schema changes as versioned SQL migrations.</li>
       </ul>
-
-      <h2>How it was built</h2>
-      <p>The whole thing was designed and built through <strong>conversational iteration with an AI coding agent (Claude Code)</strong> &mdash; starting from a written product spec and evolving through real daily use. That process is itself the interesting part:</p>
-      <ul class="case-list">
-        <li><strong>Real usage drove the design.</strong> Nearly every good decision came from dogfooding, not planning: a &ldquo;toilet paper logged as paper towel&rdquo; bug exposed over-eager fuzzy matching; a false &ldquo;low stock&rdquo; alert traced to a duplicate write from a network retry; mixed &ldquo;oz&rdquo; and &ldquo;g&rdquo; entries on coffee forced a proper units model. Each was diagnosed and fixed in the loop.</li>
-        <li><strong>Product judgment stayed human.</strong> The decisions that mattered &mdash; query-the-DB instead of context-stuffing, treat &ldquo;used&rdquo; as implying &ldquo;open,&rdquo; make counting an optional overlay rather than a requirement, confirm-only-on-destructive corrections &mdash; were product calls made through the work, with the agent as an extremely fast implementer and thinking partner.</li>
-      </ul>
-      <p>It&rsquo;s a working demonstration of building a real, shipped product <em>with</em> AI as the development environment &mdash; and of using AI deliberately <em>inside</em> the product, only where it earns its place.</p>
 
       <h2>What&rsquo;s next</h2>
       <p>Retailer integration for one-tap re-ordering &mdash; the count model was built specifically to make that safe (you don&rsquo;t auto-buy when you have spares), which is why quantity tracking exists at all.</p>
