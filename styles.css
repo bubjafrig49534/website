@@ -379,7 +379,6 @@ svg { width: 100%; height: 100%; fill: currentColor; }
   background: var(--border);
 }
 .cards--projects { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.proj { display: flex; flex-direction: column; }
 .proj__cta {
   margin: 0 22px 28px;
   font-size: 14px;
@@ -390,7 +389,8 @@ svg { width: 100%; height: 100%; fill: currentColor; }
 .proj p { flex: 1; }
 .proj:hover .proj__cta { transform: translateX(4px); }
 .proj {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
