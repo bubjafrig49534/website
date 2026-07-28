@@ -80,10 +80,9 @@
 
       <h2>The core design decision</h2>
       <p><strong>The output is a brief, not a database row.</strong> Riff doesn&rsquo;t try to be a project manager or a CMS. It produces the one artifact a marketer actually needs to act on: a structured brief that says <em>what this is, who it&rsquo;s for, how you&rsquo;ll know it worked, the plan to ship it, and a first draft</em> &mdash; rendered right in the app, with one-tap <strong>Copy brief</strong> (as markdown) so it can live wherever the team already works.</p>
-      <p>This one decision &mdash; <em>the brief is the product</em> &mdash; is what kept the tool from sprawling into yet another system nobody adopts. The intelligence lives in the triage and the writing, not in a destination.</p>
 
-      <h2>The clever part: metrics that are conditional on marketing type</h2>
-      <p>A brief is only useful if it answers <em>&ldquo;how would we know this is working?&rdquo;</em> &mdash; and the honest answer is that <strong>you can&rsquo;t measure an event the way you measure a tweet.</strong> So the AI first classifies each idea into a marketing type, then &mdash; conditional on that type &mdash; selects the metrics that actually apply:</p>
+      <h2>Metrics conditional on marketing type</h2>
+      <p>A brief is only useful if it answers <em>&ldquo;how would we know this is working?&rdquo;</em> The AI first classifies each idea into a marketing type, then selects the metrics that apply:</p>
       <div class="case-table-wrap">
         <table class="case-table">
           <thead><tr><th>Marketing type</th><th>Leading indicator (know early)</th><th>North-Star metric (the real win)</th></tr></thead>
@@ -95,15 +94,13 @@
           </tbody>
         </table>
       </div>
-      <p>Every North-Star metric ladders to the same real goal &mdash; <strong>activated, paying users</strong> &mdash; while vanity metrics (impressions, follower counts) are explicitly tagged as <em>leading indicators, never goals.</em> That leading-vs-lagging split is the whole answer to &ldquo;are we on the right track?&rdquo;: the leading indicators go green first, days before the outcome lands.</p>
+      <p>Every North-Star metric ladders to the same real goal: activated, paying users, while vanity metrics (impressions, follower counts) are tagged as leading indicators, never goals.</p>
 
-      <h2>AI-native architecture (not AI-bolted-on)</h2>
-      <p>The interesting engineering is in <em>how</em> the model is used &mdash; structurally and sparingly, not as a magic black box:</p>
+      <h2>AI-native architecture</h2>
       <ul class="case-list">
         <li><strong>Structured outputs for the classification.</strong> A raw idea &rarr; a strict JSON schema (category, funnel stage, effort, marketing type, the three metrics, a goal, a plan) using the model&rsquo;s structured-output mode &mdash; so a live demo can&rsquo;t produce a malformed classification on stage.</li>
         <li><strong>The AI selects from a taxonomy; it doesn&rsquo;t invent one.</strong> The metrics framework &mdash; <em>which</em> leading indicator and North-Star metric belong to <em>which</em> marketing type &mdash; lives in plain, unit-friendly TypeScript. The model chooses from that catalog and tailors the specifics to the idea. Judgment where it&rsquo;s needed; deterministic structure where it isn&rsquo;t.</li>
         <li><strong>Right-sized model calls.</strong> One call classifies (fast, low reasoning effort); a second drafts the actual asset (more effort). Nothing more.</li>
-        <li><strong>A single shared vocabulary.</strong> Categories, formats, funnel stages, KPIs, audience voices, and the per-type metrics all live in one taxonomy module that drives the prompt, the output schema, <em>and</em> the UI at once &mdash; so the whole app stays internally consistent from one edit.</li>
         <li><strong>House-style enforced on every draft.</strong> A voice layer (developer audience, concrete over hype, no claims beyond the source, a banned-hype-word list) is injected into every drafting prompt, with two audience registers (accessible/dev-first vs deep/technical). Designed so a memory layer could later learn each writer&rsquo;s real voice.</li>
       </ul>
 
@@ -114,14 +111,6 @@
         <li><strong>No database by design:</strong> each brief is a live session artifact, and the Copy-brief export means the output lives wherever the user wants &mdash; not locked inside the tool.</li>
         <li><strong>Ships continuously:</strong> push to <code>main</code> &rarr; Vercel auto-deploys.</li>
       </ul>
-
-      <h2>How it was built</h2>
-      <p>The whole thing was designed and built through <strong>conversational iteration with an AI coding agent (Claude Code)</strong> &mdash; and the iteration is itself the interesting part:</p>
-      <ul class="case-list">
-        <li><strong>Cutting scope was the design work.</strong> It started as a Notion-style Kanban board with a dense sortable table, inline editing, and an export button &mdash; and each round of &ldquo;this is too much&rdquo; removed something: the board, then a spreadsheet backend, then a Notion integration, then the sheet again. The clarifying realization was that <strong>the destination never mattered; the brief did.</strong> The final product is <em>smaller</em> than the first version and far stronger for it.</li>
-        <li><strong>Product judgment stayed human.</strong> The decisions that mattered &mdash; kill the board, make the brief the deliverable, keep the metrics <em>conditional on marketing type</em>, keep the AI out of the taxonomy, ship a self-contained app instead of an integration &mdash; were product calls made through the work, with the agent as an extremely fast implementer and thinking partner.</li>
-      </ul>
-      <p>It&rsquo;s a working demonstration of building a real, shipped product <em>with</em> AI as the development environment &mdash; and of using AI deliberately <em>inside</em> the product, only where it earns its place.</p>
 
       <h2>What&rsquo;s next</h2>
       <p>A memory layer so drafts learn each writer&rsquo;s voice over time (the &ldquo;learns your team&rsquo;s voice&rdquo; the app already gestures at), and an optional one-click push of a finished brief into whatever tracker a team already uses &mdash; kept deliberately as an <em>export</em>, never a lock-in.</p>
